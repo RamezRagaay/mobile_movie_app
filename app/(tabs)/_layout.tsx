@@ -18,15 +18,17 @@ const _layout = () => {
                 <Icon sf={"magnifyingglass"} drawable='custom_android_drawable'/>
             </NativeTabs.Trigger>
             
-            {/* <NativeTabs.Trigger name="saved">
-                <Label>Home</Label>
-                <Icon sf={"bookmark.fill"} drawable='custom_android_drawable'/>
-            </NativeTabs.Trigger> */}
+
+            <NativeTabs.Trigger name="profile">
+                <Label>Profile</Label>
+                <Icon sf={"person.fill"} drawable='custom_android_drawable'/>
+            </NativeTabs.Trigger>
             
-            {/* <NativeTabs.Trigger name="index">
-                <Label>Home</Label>
-                <Icon sf={"house.fill"} drawable='custom_android_drawable'/>
-            </NativeTabs.Trigger> */}
+            <NativeTabs.Trigger name="saved">
+                <Label>Saved</Label>
+                <Icon sf={"bookmark.fill"} drawable='custom_android_drawable'/>
+            </NativeTabs.Trigger>
+            
             
 
             

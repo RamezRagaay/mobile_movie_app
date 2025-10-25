@@ -1,11 +1,18 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-
+import { Button, Section, VStack } from "@expo/ui/swift-ui";
+import React from "react";
 const Saved = () => {
   return (
-    <View>
-      <Text>Saved</Text>
-    </View>
+    <Section title="🔘 Buttons">
+      <VStack spacing={12}>
+        <Button variant="default">Default</Button>
+        <Button variant="bordered">Bordered</Button>
+        <Button variant="plain">Plain</Button>
+        <Button variant="glass">Glass</Button>
+        <Button variant="glassProminent">Glass Prominent</Button>
+        <Button variant="borderedProminent">Bordered Prominent</Button>
+        <Button variant="borderless">Borderless</Button>
+      </VStack>
+    </Section>
   )
 }
 

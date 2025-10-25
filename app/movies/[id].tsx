@@ -1,5 +1,8 @@
 import { icons } from '@/constants/icons';
 import useFetch from '@/services/useFetch';
+import { Button } from "@expo/ui/swift-ui";
+import { Icon } from '@roninoss/icons';
+import { GlassView } from 'expo-glass-effect';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
 import { Dimensions, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
@@ -11,6 +14,8 @@ interface MovieInfoProps {
   lable: string;
   value: string | number | null;
 }
+const router = useRouter();
+
 const MovieInfo = ({ lable, value }: MovieInfoProps) => (
   <View className='flex-col items-start justify-center mt-5'>
     <Text className='text-light-200 font-normal text-sm'>
@@ -24,10 +29,17 @@ const MovieInfo = ({ lable, value }: MovieInfoProps) => (
     }
   </View>
 )
+const BackButton = () => (
+  <TouchableOpacity onPress={() => {router.back()}} className='absolute top-3 left-3'>
+    <GlassView 
+      className='items-center flex justify-center rounded-full p-3'>
+        <Icon name="chevron-left" size={24} color="light-100" />
+    </GlassView>
+  </TouchableOpacity>
+)
 const MovieDetails = () => {
   const { id } = useLocalSearchParams();
   const { data, loading, error } = useFetch(()=>getMovieDetails(`${id}`));
-  const router = useRouter();
   const {width} = Dimensions.get('window');
 
   return (
@@ -132,6 +144,7 @@ const MovieDetails = () => {
             </Text>
           </LinearGradient>
         </TouchableOpacity>
+        
       </SafeAreaView>
     
   )
